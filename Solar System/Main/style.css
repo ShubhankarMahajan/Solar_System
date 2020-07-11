@@ -1,0 +1,357 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+body{
+    zoom: 0.8;
+    /* background: url(./Assests/Images/stars_1.png) center center no-repeat fixed;
+    background-color: black; */
+    /* background: radial-gradient(ellipse at bottom, #1C2837 0%, #050608 100%) center center no-repeat fixed; */
+    background: url(./Screenshot_2020-07-11\ Solar\ System.png) center center no-repeat fixed;
+    background-color: #000000;
+    background-size: cover;
+    background-size: 100%;
+}
+#comets{
+    position: relative;
+    top: -150px;
+    width: 100vw;
+    text-align: left;
+    height: 100%;
+    min-height: 900px;
+    overflow: hidden;
+}
+#comets i{
+  display: inline-block;
+  width: 250px;
+  height: 150px;
+  position:absolute;
+  border-radius: 5% 40% 70%;
+  box-shadow: inset 0px 0px 1px #294b67;
+  border: 1px solid #333;
+  z-index: 1;
+  background-color: #fff;
+  opacity: .7;
+  animation: falling 10s 0s infinite;
+  animation-timing-function:ease-in;
+}
+#comets i:nth-child(1){
+    left: 50vw;
+    height:73px; 
+    width:3px;
+    background-color: #fff;
+}
+#comets i:nth-child(3){
+    height:11px; 
+    width:3px;
+    -webkit-animation: falling3 8s 3s infinite;
+    left: 10vw;
+    background-color: #fff;
+}
+#comets i:nth-child(2){
+    -webkit-animation: falling2 6s 1s infinite;
+    left: 30vw;
+    height:70px; 
+    width:4px;
+    background-color: #fff;
+}
+@keyframes falling{
+    0%{
+        transform: translate3d(100px,0px,0px) rotate(130deg);
+    }
+    3%{
+        transform: translate3d(450px,900px,0px rotate(130deg));
+    }
+    100%{
+        transform: translate3d(450px,900px,0px) rotate(180deg);
+        opacity: 0;
+    }
+}
+@keyframes falling3{
+    0% {
+        transform: translate3d(0,0,0) rotate(150deg);
+    }
+      
+      10% {
+        transform: translate3d(430px,640px,0) rotate(150deg);
+        opacity: 0;
+    }
+      
+    100% {
+        transform: translate3d(430px,640px,0) rotate(150deg);
+        opacity: 0;
+    }
+}
+@keyframes falling2 {
+    0% {
+    transform:translate3d(100px,0,0) rotate(130deg);
+   }
+   
+   15% {
+    transform:translate3d(800px,580px,0) rotate(130deg);
+    opacity: 0;
+   }
+   
+   100% {
+    transform: translate3d(800px,680px,0) rotate(180deg);
+    opacity: 0;
+   }
+}
+.solarsystem{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 50%;
+    left: 50%;
+    transform: translateZ(0);
+    transform: translate(-62%, -50%) scale(0.35);
+    transition: 2s ease;
+}
+/* .solarsystem:hover{
+    transform: translateZ(0);
+    transform: translate(-75,-50) scale(0.7);
+} */
+.sun{
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateZ(0);
+    transform: translate(0,-50%);
+    width: 500px;
+    height: 500px;
+    background:radial-gradient(ellipse at center, #ffd000 1%,#f9b700 39%,#f9b700 39%,#e06317 100%);
+    border-radius: 100%;
+    /* box-shadow: 0 0 210px 5px rgb(255, 253, 122), 0 0 50px -5px rgb(255, 251, 19); */
+    animation: sun 3.0s linear infinite;
+}
+@keyframes sun {
+    0% { box-shadow: 0 0 210px rgb(255, 251, 19); }
+    50% { box-shadow: 0 0 50px rgb(255, 253, 122); }
+    100% { box-shadow: 0 0 210px rgb(255, 251, 19); }
+}
+.mercury{
+    position: absolute;
+    right: 615px;
+    top: 50%;
+}
+.mercurysphere{
+    background-image: linear-gradient(-100deg, #b85717 0%, #5e412d 100%);
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    position: absolute;
+    right: 30%;
+    top: 50%;
+    transform: translateZ(0);
+    transform: translateY(-50%);
+    box-shadow: 0 0 100px 0px #b85717;
+    transform-origin: 1425% 0%;
+    animation: r1 10s linear infinite;
+}
+@keyframes r1{
+    from{
+        transform: translateZ(0);
+        transform: rotate(0deg);
+    }
+    to{
+        transform: translateZ(0);
+        transform: rotate(360deg);
+    }
+}
+/* .mercuryp{
+    z-index: -1;
+    position: absolute;
+    transform: translateZ(0);
+    transform: translate(-1.7%,-50%);
+    height: 820px;
+    width: 820px;
+    border: #b85717 solid;
+    border-radius: 100%;
+    border-width: thick;
+} */
+.venus{
+    position: absolute;
+    right: 815px;
+    top: 50%;
+}
+.venussphere{
+    position: absolute;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    right: 50%;
+    top: 50%;
+    background-image: linear-gradient(-100deg, #FFFFBF 0%, #ffff4f 100%);
+    transform: translateZ(0);
+    transform: translateY(-50%);
+    box-shadow: 0 0 100px 0px #ffff76;
+    transform-origin: 2057% 0%;
+    animation: r2 12s linear infinite;
+}
+@keyframes r2{
+    from{
+        transform: translateZ(0);
+        transform: rotate(0deg);
+    }
+    to{
+        transform: translateZ(0);
+        transform: rotate(360deg);
+    }
+}
+.earth{
+    position: absolute;
+    right: 1000px;
+    top: 50%;
+    transform: translateZ(0);
+    transform: translateY(-50%);
+}
+.earthsphere{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateZ(0);
+    transform: translate(-50%,-50%);
+    background-image: linear-gradient(-100deg, #0763E3 2%, #020555 100%);
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    box-shadow: 0 0 50px 0px #6360ff;
+}
+.earthspace{
+    height: 110px;
+    width: 110px;
+    border-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 100%;
+    transform: translateZ(0);
+    transform-origin: 735%;
+    animation: r3 14s linear infinite;
+}
+@keyframes r3{
+    from{
+        transform: translateZ(0);
+        transform: rotate(0deg);
+    }
+    to{
+        transform: translateZ(0);
+        transform: rotate(360deg);
+    }
+}
+.moon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: rmoon 4s linear infinite;
+}
+.m{
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+    background: linear-gradient(-96deg, #b8b8b8 2%, #3f3f3f 100%);
+}
+@keyframes rmoon{
+    from{
+        /* transform: translateZ(0); */
+        transform: rotate(0deg);
+    }
+    to{
+        /* transform: translateZ(0); */
+        transform: rotate(360deg);
+    }
+}
+#earthmoon1{
+    transform: translate(-150%,150%);
+    position: absolute;
+    top: 128;
+    left: 128;
+}
+/* Mars */
+.mars{
+    position: absolute;
+    right: 1150px;
+    top: 50%;
+  }
+.marssphere{
+    position: absolute;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    right: 0;
+    top: 50%;
+    background-image: linear-gradient(-140deg, #fc6851 0%, #a13d2d 99%);
+    transform: translate(-50%,-50%);
+    box-shadow: 0 0 100px 0px #fc6851;
+    transform-origin: 3260% 0%;
+    animation: r4 15s linear infinite;
+    box-shadow: 0 0 100px 0px #b93f2c;
+}
+@keyframes r4{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.jupiter{
+    position: absolute;
+    right: 1250px;
+    top: 50%;
+}
+.jupitersphere{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, rgb(201, 201, 107) 10%, rgb(197, 184, 0) 90%);
+    border-radius: 100%;
+    transform-origin: 2200% 0%;
+    box-shadow: 0 0 100px 0px rgb(199, 192,57);
+    animation: r5 17s linear infinite;
+}
+@keyframes r5{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.saturn{
+    position: absolute;
+    right: 1500px;
+    top: 50%;
+}
+.saturnsphere{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, #cc9966 10%, #9e5c19 90%);
+    border-radius: 100%;
+    border-color: white;
+    border-width: 10px;    
+    transform-origin: 2500%;
+    box-shadow: 0 0 100px 0px #c57f39;
+    animation: r6 20s linear infinite;
+}
+@keyframes r6{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Hover Stop */
+*:hover{
+    animation-play-state: paused;
+}
