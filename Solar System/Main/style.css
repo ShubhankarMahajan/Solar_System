@@ -12,6 +12,7 @@ body{
     background-color: #000000;
     background-size: cover;
     background-size: 100%;
+    overflow: hidden;
 }
 #comets{
     position: relative;
